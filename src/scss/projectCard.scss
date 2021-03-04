@@ -1,0 +1,238 @@
+.project-container {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: auto;
+
+  .project-card {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    max-width: 600px;
+    height: 295px;
+    background: #fff;
+    margin: 30px 20px 60px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+    cursor: pointer;
+
+    .imgBx {
+      position: relative;
+      width: 550px;
+      height: 272px;
+      top: -60px;
+      left: 10px;
+      z-index: 1;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+      border-radius: 4px;
+
+      img {
+        max-width: 100%;
+        border-radius: 4px;
+      }
+    }
+
+    .project-content {
+      position: relative;
+      margin-top: -140px;
+      padding: 10px 15px;
+      text-align: center;
+      color: #111;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.2s ease-in-out;
+
+      .tech-stack {
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .stack {
+          position: relative;
+          margin: 0 7px;
+
+          img {
+            width: 50px;
+            height: 50px;
+          }
+          .tooltip {
+            color: #fff;
+            position: absolute;
+            left: 50%;
+            bottom: 100%;
+            opacity: 0;
+            margin-bottom: 1em;
+            padding: 0.6em;
+            background-color: #000;
+            font-size: 0.8em;
+            line-height: 1.6;
+            text-align: left;
+            white-space: nowrap;
+            transform: translate(-50%, 1em);
+            transition: all 0.15s ease-in-out;
+            border: none;
+            border-radius: 5px;
+
+            &::before {
+              content: '';
+              position: absolute;
+              top: 100%;
+              left: 50%;
+              width: 0;
+              height: 0;
+              border: 0.5em solid transparent;
+              border-top-color: #000;
+              transform: translate(-50%, 0);
+            }
+          }
+
+          &:hover {
+            span {
+              opacity: 1;
+              transform: translate(-50%, 0);
+            }
+          }
+        }
+      }
+      .project-button {
+        display: inline-block;
+        background: crimson;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 10px 30px;
+        margin-top: 5px;
+        border-radius: 6px;
+        border: 2px solid crimson;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: crimson;
+          background: none;
+        }
+      }
+    }
+  }
+
+  .clicked {
+    height: 485px;
+    margin-bottom: 50px;
+
+    .project-content {
+      visibility: visible;
+      opacity: 1;
+      margin-top: -60px;
+      transition-delay: 0.2s;
+      transition: 0.3s ease-in-out;
+    }
+  }
+}
+
+//normal
+@media (max-width: 1325px) {
+  .project-container {
+    .project-card {
+      max-width: 500px;
+      height: 220px;
+      .imgBx {
+        width: 450px;
+        height: 222px;
+      }
+    }
+    .clicked {
+      height: 445px;
+    }
+  }
+}
+
+//tablet
+@media (max-width: 1200px) {
+  .project-container {
+    .project-card {
+      max-width: 400px;
+      height: 175px;
+      .imgBx {
+        width: 370px;
+        height: 185px;
+        left: 0
+      }
+    }
+    .clicked {
+      height: 445px;
+    }
+  }
+}
+
+//mobile
+@media (max-width: 825px) {
+  .project-container {
+    .project-card {
+      max-width: 80%;
+      height: 285px;
+      .imgBx {
+        width: 100%;
+
+        
+      }
+      .project-content{
+        margin-top: 6px;
+      }
+    }
+    .clicked {
+      height: 500px;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .project-container {
+    .project-card {
+      max-width: 95%;
+      height: 175px;
+      .imgBx {
+        width: 100%;
+ 
+        
+      }
+      .project-content{
+        margin-top: -53px;
+        
+      }
+    }
+    .clicked {
+      height: 430px;
+    }
+  }
+}
+
+@media (max-width: 385px) {
+  .project-container {
+    .project-card {
+      
+      max-width: 95%;
+      height: 145px;
+      .imgBx {
+        position: relative;
+
+        width: 100%;
+
+        
+      }
+      .project-content{
+        margin-top: -53px;
+        
+      }
+    }
+    .clicked {
+      height: 430px;
+    }
+  }
+}

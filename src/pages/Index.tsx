@@ -1,5 +1,5 @@
-import React from "react";
-import MainLayout from "../components/Layouts/MainLayout";
+import React from 'react'
+import MainLayout from '../components/Layouts/MainLayout'
 import {
   HomeSection,
   AboutMe,
@@ -8,7 +8,7 @@ import {
   Projects,
   Services,
   Skills,
-} from "../components/Sections";
+} from '../components/Sections'
 
 const Index = () => {
   return (
@@ -22,9 +22,11 @@ const Index = () => {
         <AboutMe />
       </div>
       {/**======= SECTION 3 - SERVICES =======*/}
-      <div>
+      {/**
+ *       <div>
         <Services />
       </div>
+  */}
       {/**======= SECTION 4 - PROJECTS =======*/}
       <div>
         <Projects />
@@ -44,7 +46,7 @@ const Index = () => {
       {/**======= SECTION EXTRA - FLOATING THINGS =======*/}
       <div>waiting...</div>
     </MainLayout>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index

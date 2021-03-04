@@ -1,6 +1,7 @@
 import React from 'react'
 import './scss/main.scss'
 import './scss/extras.scss'
+import './scss/projectCard.scss'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Index from './pages/Index'
 import { library } from '@fortawesome/fontawesome-svg-core'
