@@ -16,7 +16,6 @@ import {
   nodejsStack,
   reactStack,
   springStack,
-  sqlServerStack,
   tailwindStack,
   techStack,
   tsStack,

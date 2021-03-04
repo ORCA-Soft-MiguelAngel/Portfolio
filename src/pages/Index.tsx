@@ -6,7 +6,6 @@ import {
   Clients,
   Contact,
   Projects,
-  Services,
   Skills,
 } from '../components/Sections'
 
