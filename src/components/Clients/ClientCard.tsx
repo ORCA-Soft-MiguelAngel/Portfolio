@@ -13,7 +13,7 @@ const ClientCard: React.FC<props> = ({ title, content, img }) => {
       <div className="box">
         <img src={img ? img : defaultImg} alt="" />
         <div className="text">{title}</div>
-        <p>{content}</p>
+       
       </div>
     </div>
   )

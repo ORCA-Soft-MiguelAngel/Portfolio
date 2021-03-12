@@ -81,7 +81,7 @@ section .title::after{
 .navbar{
     position: fixed;
     width: 100%;
-    z-index: 999;
+    z-index: 100;
     padding: 30px 0;
     font-family: 'Ubuntu', sans-serif;
     transition: all 0.3s ease;
@@ -165,7 +165,7 @@ section .title::after{
 /* home section styling */
 .home{
     display: flex;
-    background: url("../images/banner.jpg") no-repeat center;
+    background: url("../images/banner.png") no-repeat center;
     height: 100vh;
     color: #fff;
     min-height: 500px;
@@ -267,6 +267,11 @@ section .title::after{
     background: #111;
     content: "what i've done";
 }
+
+.projects .title2::after{
+    background: #111;
+    content: "what do i offer";
+}
 .projects .serv-content .card{
     width: calc(33% - 20px);
     background: #222;
@@ -279,7 +284,7 @@ section .title::after{
 .projects .serv-content .card:hover{
     background: crimson;
 }
-.projects .serv-content .card .box{
+.projects .serv-content .card .box{ 
     transition: all 0.3s ease;
 }
 .projects .serv-content .card:hover .box{
@@ -375,8 +380,11 @@ section .title::after{
 }
 
 /* teams section styling */
+.teams .title::before{
+    width: 310px;
+}
 .teams .title::after{
-    content: "who with me";
+    content: "people who work with me ";
 }
 .client-card{
     background: #222;

@@ -1,31 +1,36 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
+import ScrollUpBtn from '../components/Extras/ScrollUpBtn'
+import ModalPopup from '../components/Home/ModalPopup'
 import MainLayout from '../components/Layouts/MainLayout'
-import {
-  HomeSection,
-  AboutMe,
-  Clients,
-  Contact,
-  Projects,
-  Skills,
-} from '../components/Sections'
+import { AboutMe, Contact, HomeSection, Projects, Services, Skills } from '../components/Sections'
 
 const Index = () => {
+  //STATES
+  //modal state
+  const [showModal, setShowModal] = useState<boolean>(false)
+
+  //refs
+  const scrollRef = useRef<HTMLDivElement | null>(null)
+
   return (
     <MainLayout>
+      <ScrollUpBtn refS={scrollRef} />
+      {/**======= SECTION EXTRA - FLOATING THINGS =======*/}
+      <ModalPopup showModal={showModal} setShowModal={setShowModal} />
       {/**======= SECTION 1 - ABOVE THE FOLD =======*/}
-      <div>
-        <HomeSection />
+      <div ref={scrollRef}>
+        <HomeSection showModal={showModal} setShowModal={setShowModal} />
       </div>
       {/**======= SECTION 2 - WHO I AM =======*/}
       <div>
         <AboutMe />
       </div>
-      {/**======= SECTION 3 - SERVICES =======*/}
+      {/**======= SECTION 3 - SERVICES (DISABLED) =======*/}
       {/**
- *       <div>
-        <Services />
-      </div>
-  */}
+       *<div>
+       *  <Services />
+       *</div>
+       */}
       {/**======= SECTION 4 - PROJECTS =======*/}
       <div>
         <Projects />
@@ -36,14 +41,14 @@ const Index = () => {
       </div>
       {/**======= SECTION 6 - CLIENTS =======*/}
       <div>
-        <Clients />
+        <div>
+          <Services />
+        </div>
       </div>
       {/**======= SECTION 7 - CONTACT ME =======*/}
       <div>
         <Contact />
       </div>
-      {/**======= SECTION EXTRA - FLOATING THINGS =======*/}
-      <div>waiting...</div>
     </MainLayout>
   )
 }

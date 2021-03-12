@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
+import SectionsContext from '../../contexts/SectionsContext'
 import { skills } from '../../helpers/dummyData'
 import '../../scss/githubButtons.scss'
 
@@ -16,32 +17,35 @@ const Skills: React.FC = () => {
     setSelectedCategory(e.currentTarget.id)
   }
 
+  const context = useContext(SectionsContext)
+
   return (
-    <section className="skills" id="skills">
+    <section className="skills" ref={context?.skillsRef}>
       <div className="max-width">
         <h2 className="title">My skills</h2>
         <div className="skills-content">
           <div className="column left">
             <div className="text">My creative skills & experiences.</div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ratione error
-              est recusandae consequatur, iusto illum deleniti quidem impedit, quos quaerat quis
-              minima sequi. Cupiditate recusandae laudantium esse, harum animi aspernatur quisquam
-              et delectus ipsum quam alias quaerat? Quasi hic quidem illum. Ad delectus natus aut
-              hic explicabo minus quod.
+              I mainly do backend development with different languages, I work with the solutions
+              from the approach of the model to the orchestration of the servers, especially in
+              microservices, since it is conventional in large-scale systems. I also take care of
+              the frontend design without any complications, providing ideas that prioritize the
+              end-user experience. I would also highlight the handling basic on various cloud
+              platforms.
             </p>
             <Link to="#">Read more</Link>
           </div>
           <div className="column right">
             {/**category section */}
-            <div style={{textAlign:'center',marginBottom:'10px'}}>
-              <ul className="button-group minor-group">
+            <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+              <ul className="cButton-group minor-group">
                 {skills.map((skill, i) => (
                   <li key={`category-${i + 1}`}>
                     <span
                       id={skill.category}
                       onClick={handleChangeCategory}
-                      className={`button pill _font-Ubuntu ${
+                      className={`cButton pill _font-Ubuntu ${
                         selectedCategory === skill.category ? 'pick-this' : ''
                       }`}
                     >

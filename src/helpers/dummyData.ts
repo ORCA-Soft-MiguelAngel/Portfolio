@@ -7,6 +7,12 @@ import labs369Img from '../images/projects/img/369labs.png'
 import kisshaImg from '../images/projects/img/kissha.png'
 import aliciaImg from '../images/projects/img/alicia.png'
 import vyrxImg from '../images/projects/img/vyrx.png'
+
+//client icon
+import labs369Icon from '../images/clients/369labs.jpeg'
+import ecoclybIcon from '../images/clients/ecoclyb.png'
+
+//stacks
 import {
   awsStack,
   bootstrapStack,
@@ -25,7 +31,6 @@ export type projectProps = {
   title: string
   content: string
   img: string
-  selected: boolean
   url:string
   techStack: techStack[]
 }
@@ -57,43 +62,38 @@ export const projects: projectProps[] = [
     content:
       'Landing page for the Ecoclyb Electric company, which is responsible for the  optimization of electrical systems and automated solutions for them.',
     img: ecoclybImg,
-    selected: false,
     url:'https://ecoclyb.com',
     techStack: [reactStack, tsStack, tailwindStack],
   },
   {
     title: '369 Labs',
     content:
-      'Landing page for the Ecoclyb Electric company, which is responsible for the  optimization of electrical systems and automated solutions for them.',
+      'Landing page for the 369 Labs Tech, a company that offers large-scale software solutions to a large number of customers of many areas.',
     img: labs369Img,
-    selected: false,
     url:'https://www.369labstech.com/',
     techStack: [reactStack, bootstrapStack, gatsbyStack],
   },
   {
     title: 'Kissha E-Commerce',
     content:
-      'Landing page for the Ecoclyb Electric company, which is responsible for the  optimization of electrical systems and automated solutions for them.',
+      'Web App for Kissha E-Commerce, a shopping app for beauty products with user system,shopping cart and purchase orders.',
     img: kisshaImg,
-    selected: false,
     url:'https://kissha-ecommerce-makeup.netlify.app',
     techStack: [reactStack, bootstrapStack, gatsbyStack, nodejsStack, mysqlStack],
   },
   {
     title: 'VYR-X',
     content:
-      'Landing page for the Ecoclyb Electric company, which is responsible for the  optimization of electrical systems and automated solutions for them.',
+      'Web app to manage the security personnel integrated in a company, whether it is internal or third-party security.',
     img: vyrxImg,
-    selected: false,
     url:'https://vyrx.netlify.app',
     techStack: [reactStack, materialStack, gatsbyStack, springStack, awsStack],
   },
   {
     title: 'Alicia Accounting',
     content:
-      'Landing page for the Ecoclyb Electric company, which is responsible for the  optimization of electrical systems and automated solutions for them.',
+      'Accounting web app to manage entries, accounts and balances more efficiently.',
     img: aliciaImg,
-    selected: false,
     url:'https://alicia-accounting.netlify.app',
 
     techStack: [reactStack, bootstrapStack, tsStack, springStack, mysqlStack],
@@ -101,9 +101,8 @@ export const projects: projectProps[] = [
   {
     title: 'Pizza Simple Website',
     content:
-      'Landing page for the Ecoclyb Electric company, which is responsible for the  optimization of electrical systems and automated solutions for them.',
+      'Simple Pizza demo website, with responsive and interaction, baking updates for this one.',
     img: pizzaImg,
-    selected: false,
     url:'https://demo-pizza.netlify.app',
     techStack: [reactStack, tsStack],
   },
@@ -111,22 +110,22 @@ export const projects: projectProps[] = [
 
 export const services: serviceProps[] = [
   {
-    title: 'Advertising',
-    content:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem quia sunt, quasi quoillo enim.',
-    icon: 'chart-line',
-  },
-  {
     title: 'Apps Design',
     content:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem quia sunt, quasi quoillo enim.',
+      'Complete applications in all platforms (Mobile, Web, PC) from e-commerce to management systems, all tailored to your needs.',
     icon: 'code',
   },
   {
     title: 'Web Design',
     content:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem quia sunt, quasi quoillo enim.',
+      'Landing page design for the commercial promotion of your company, integrated with analytical feedback to improve the site.',
     icon: 'paint-brush',
+  },
+  {
+    title: 'Dev. and Maintenance',
+    content:
+      'backend development and maintenance, as well as fundamental management of cloud platforms such as AWS.',
+    icon: 'chart-line',
   },
 ]
 
@@ -152,7 +151,7 @@ export const skills: skillsProps[] = [
     ],
   },
   {
-    category: 'Deploy & Cloud',
+    category: 'Deploy',
     stacks: [
       { tech: 'AWS', percentage: 65 },
       { tech: 'Heroku', percentage: 70 },
@@ -166,17 +165,17 @@ export const skills: skillsProps[] = [
 export const clients: clientProps[] = [
   {
     title: '369 Labs',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    img: '',
+    content: 'company that offers large-scale software solutions to a large number of customers of many areas.',
+    img: labs369Icon,
   },
   {
     title: 'Ecoclyb',
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    img: '',
+    img: ecoclybIcon,
   },
   {
-    title: 'Alguien',
+    title: 'Alicia',
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    img: '',
+    img: ecoclybIcon,
   },
 ]
