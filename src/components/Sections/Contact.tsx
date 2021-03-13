@@ -5,6 +5,7 @@ import axiosClient from '../../config/axios'
 import { PuffLoader } from 'react-spinners'
 import '../../scss/alert.scss'
 import SectionsContext from '../../contexts/SectionsContext'
+import ReactGa from 'react-ga'
 
 type formState = {
   name: string
@@ -77,12 +78,11 @@ const Contact: React.FC = () => {
                 status: 'success',
                 message: 'Message sent, you will soon recieve a reply',
               })
-              // //Google Analytics
-              // //Analytic
-              // ReactGa.event({
-              //   category: "Button",
-              //   action: "Formulario enviado exitosamente",
-              // });
+              //Analytic
+              ReactGa.event({
+                category: 'Button',
+                action: 'Contact Form',
+              })
             } else {
               //something goes wrong, sent a worng message
               setSentMessage({

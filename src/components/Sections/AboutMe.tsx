@@ -2,9 +2,19 @@ import React, { useContext } from 'react'
 import ReactTypingEffect from 'react-typing-effect'
 import SectionsContext from '../../contexts/SectionsContext'
 import img from '../../images/profile-1.jpeg'
+import ReactGa from 'react-ga'
 
 const AboutMe: React.FC = () => {
   const context = useContext(SectionsContext)
+
+  const handleDownloadCV = () => {
+    //Analytic
+    ReactGa.event({
+      category: 'Button',
+      action: 'Download CV',
+    })
+  }
+
   return (
     <section className="about" ref={context?.aboutRef}>
       <div className="max-width">
@@ -33,7 +43,13 @@ const AboutMe: React.FC = () => {
               collaborated with trained developers on various projects. I am quite curious and
               therefore I am constantly working on improving my skills.
             </p>
-            <a href='https://drive.google.com/uc?export=download&id=1iaiPj-cbchWH1E10kh14Is95JImVAO02' download>Download CV</a>
+            <a
+              href="https://drive.google.com/uc?export=download&id=1iaiPj-cbchWH1E10kh14Is95JImVAO02"
+              download
+              onClick={handleDownloadCV}
+            >
+              Download CV
+            </a>
           </div>
         </div>
       </div>

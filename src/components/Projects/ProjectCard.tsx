@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { projectProps } from '../../helpers/dummyData'
+import ReactGa from 'react-ga'
 
 type props = projectProps
 
@@ -9,7 +10,14 @@ const ProjectCard: React.FC<props> = ({ content, img, techStack, title, url }) =
   const [selected, setSelected] = useState<boolean>(false)
 
   //HANDLERS
-  const handleGoToWebsite = () => window && window.open(url)
+  const handleGoToWebsite = () => {
+    //Analytic
+    ReactGa.event({
+      category: 'Button',
+      action: `Click on website - ${title}`,
+    })
+    window && window.open(url)
+  }
 
   return (
     <div

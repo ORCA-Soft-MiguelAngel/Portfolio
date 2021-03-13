@@ -3,6 +3,7 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import ReactTypingEffect from 'react-typing-effect'
 import SectionsContext from '../../contexts/SectionsContext'
+import ReactGa from 'react-ga'
 
 type props = {
   showModal: boolean
@@ -12,10 +13,18 @@ type props = {
 const HomeSection: React.FC<props> = ({ showModal, setShowModal }) => {
   //HANDLERS
   //open modal
-  const handleOpenModal = () => setShowModal((prev) => !prev)
+  const handleOpenModal = () => {
+
+    //Analytic
+    ReactGa.event({
+      category: 'Button',
+      action: 'Call or chat with me',
+    })
+    setShowModal((prev) => !prev)
+  }
 
   const context = useContext(SectionsContext)
-  
+
   return (
     <section className="home" ref={context?.homeRef}>
       <div className="max-width">

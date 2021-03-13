@@ -1,18 +1,24 @@
 import styled from 'styled-components'
 
+type props = {
+  show: boolean
+}
+
 export const ModalPopupStyles = {
-  Background: styled.div`
+  Background: styled.div<props>`
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
+    background: ${(p) => `rgba(0, 0, 0,${p.show ? '0.8' : 0})`};
     position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1024;
+    transition: all 0.1s ease-in-out;
+    opacity: ${(p) => (p.show ? 1 : 0)};
+    z-index: ${(p) => (p.show ? 1024 : -1)};
   `,
 
-  ModalWrapper: styled.div`
+  ModalWrapper: styled.div<props>`
     width: 700px;
     box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
     background: #fff;
@@ -22,6 +28,10 @@ export const ModalPopupStyles = {
     border-radius: 10px;
     padding: 15px;
     font-family: 'Poppins';
+    transition: all 0.3s ease-in-out;
+    opacity: ${(p) => (p.show ? 1 : 0)};
+    transform: ${(p) => (p.show ? `translateY(0%)` : `translateY(-100%)`)};
+
     @media (max-width: 767px) {
       width: 95%;
       margin: 0 auto;
@@ -160,11 +170,11 @@ export const ModalPopupStyles = {
       }
       h5 {
         display: block;
-        font-size:16px;
+        font-size: 16px;
       }
-      div{
-        p{
-          font-size:14px;
+      div {
+        p {
+          font-size: 14px;
         }
       }
     }

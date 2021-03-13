@@ -4,7 +4,9 @@ import { projects } from '../../helpers/dummyData'
 import ProjectCard from '../Projects/ProjectCard'
 
 const Projects: React.FC = () => {
+  //CONTEXT
   const context = useContext(SectionsContext)
+
   return (
     <section className="projects" ref={context?.projectsRef} style={{ minHeight: '100vh' }}>
       <h2 className="title">My projects</h2>{' '}
