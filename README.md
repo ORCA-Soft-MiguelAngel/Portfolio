@@ -5,4 +5,4 @@ This is my portfolio repo, there is some env variables needed to work properly, 
 
 ### Website
 
-Visit my portfolio here: [https://miguelangel.netlify.app/](Miguel Angel Portfolio)
+Visit my portfolio here: https://miguelangel.netlify.app
