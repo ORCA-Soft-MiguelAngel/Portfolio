@@ -4,6 +4,7 @@ import ModalPopup from '../components/Home/ModalPopup'
 import MainLayout from '../components/Layouts/MainLayout'
 import { AboutMe, Contact, HomeSection, Projects, Services, Skills } from '../components/Sections'
 import ReactGa from 'react-ga'
+import axiosClient from '../config/axios'
 
 const Index = () => {
   //STATES
@@ -16,6 +17,9 @@ const Index = () => {
   //EFFECTS
   //initial effect
   useEffect(() => {
+    //wakeup
+    axiosClient.get("/wakeup");
+    
     ReactGa.initialize(`${process.env.REACT_APP_GOOGLE_ANALYTICS_ID}`)
 
     //to report page view
