@@ -44,7 +44,7 @@ const AboutMe: React.FC = () => {
               therefore I am constantly working on improving my skills.
             </p>
             <a
-              href="https://drive.google.com/uc?export=download&id=1iaiPj-cbchWH1E10kh14Is95JImVAO02"
+              href="https://drive.google.com/uc?export=download&id=1bZWHjEVPi476JM9uBpg_PVHpyUqWq_AS"
               download
               onClick={handleDownloadCV}
             >
