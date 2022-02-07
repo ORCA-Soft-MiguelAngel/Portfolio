@@ -17,9 +17,24 @@ const Index = () => {
   //EFFECTS
   //initial effect
   useEffect(() => {
+    //TEST
+    const fetchData = async () => {
+      try {
+        const result = await fetch('http://localhost:5000/tests/get', {
+          method: 'GET',
+        })
+        const res = await result.json()
+        console.log(result)
+        console.log(res)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchData()
+
     //wakeup
-    axiosClient.get("/wakeup");
-    
+    axiosClient.get('/wakeup')
+
     ReactGa.initialize(`${process.env.REACT_APP_GOOGLE_ANALYTICS_ID}`)
 
     //to report page view
